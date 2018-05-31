@@ -8,7 +8,7 @@ mnist = fetch_mldata('MNIST original')
 # print(len(mnist['data'])) 
 
 x , y = mnist['data'], mnist['target']
-print(x.shape) #70000 row กับ 784 pixel
+print(x) #70000 row กับ 784 pixel
 
 # print(x[69999])
 # print("result is : ", y[69999])
@@ -23,5 +23,13 @@ num_split = 60000
 
 x_train, x_test, y_train, y_test = x[:num_split],x[num_split:],y[:num_split], y[num_split:]
 
-print(x_train)
+# print(x_train)
 
+shuffle_index = np.random.permutation(num_split)
+# print(np.random.permutation(num_split))
+x_train , y_train =x_train[shuffle_index],y_train[shuffle_index]
+print("y_test : ", y_test,", y_train :",y_train)
+
+y_train_s = (y_train == 0)
+
+y_test_s = (y_test == 0)
