@@ -1,4 +1,5 @@
 from sklearn.datasets import fetch_mldata
+from sklearn.linear_model import SGDClassifier
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -33,3 +34,10 @@ print("y_test : ", y_test,", y_train :",y_train)
 y_train_s = (y_train == 0)
 
 y_test_s = (y_test == 0)
+clf = SGDClassifier(random_state= 0 )
+print(clf.fit(x_train , y_train_s))
+
+print(clf.predict(x[1000].reshape(1,-1)))
+
+
+
