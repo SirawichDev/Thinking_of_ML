@@ -34,6 +34,7 @@ print("y_test : ", y_test,", y_train :",y_train)
 y_train_s = (y_train == 0)
 
 y_test_s = (y_test == 0)
+print("y_test_s : ", y_test_s,", y_train_s :",y_train_s)
 clf = SGDClassifier(random_state= 0 )
 print(clf.fit(x_train , y_train_s))
 
